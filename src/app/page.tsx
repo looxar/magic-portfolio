@@ -4,8 +4,7 @@ import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
-import { Mailchimp } from "@/components";
+import { home, about, person } from "@/app/resources/content";
 import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
@@ -97,10 +96,12 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Projects range={[1, 3]} />
       </RevealFx>
-      {routes["/blog"] && (
+
+      {/* {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -111,9 +112,10 @@ export default function Home() {
             <Posts range={[1, 2]} columns="2" />
           </Flex>
         </Flex>
-      )}
-      <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      )} */}
+      
+      {/* <Projects range={[3]} /> */}
+     
     </Column>
   );
 }

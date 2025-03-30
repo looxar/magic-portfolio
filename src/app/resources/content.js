@@ -1,26 +1,27 @@
 import { InlineCode } from "@/once-ui/components";
+import Link from 'next/link';
 
+// const person = {
+//   firstName: "Selene",
+//   lastName: "Yu",
+//   get name() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+//   role: "Design Engineer",
+//   avatar: "/images/avatar.jpg",
+//   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+//   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+// };
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Panuwit",
+  lastName: "Thaneewat",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),
+  role: "Programmer Engineer and IT Support",
+  avatar: "/images/looxar.jpg",
+  location: "Asia/Bangkok", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Thai"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const social = [
@@ -44,7 +45,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:looxar.wicher@gmail.com",
   },
 ];
 
@@ -52,11 +53,14 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Programmer Engineer and IT Support</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Panuwit, a programmer at <a href="https://www.pea.co.th/" target="_blank" rel="noopener noreferrer">
+        <InlineCode>PEA</InlineCode>
+      </a>, where I've learn a lot.
+      <br />I'm looking forward to build something good to help our staff
+      <br />resolve their problem.
     </>
   ),
 };
@@ -81,9 +85,10 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Hardworking and passionate programmer with strong organizational skills and a focus on team
+        collaboration and delivering optimal results. Skilled in software development, coding, debugging,
+        and problem-solving, with a proven ability to adapt to changing needs and consistently deliver
+        high-quality software solutions.
       </>
     ),
   },
@@ -92,17 +97,22 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "PEA",
+        timeframe: "2016 - Present",
+        role: "Programmer Engineer and IT Support",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Migrated the asset reporting process from paper-based to web-based
+            using Angular and Spring Boot, enhancing accessibility and reducing
+            manual errors.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Built a PHP-based tool to process Excel files exported from SAP, enabling
+            seamless database uploads and reducing processing time.
+          </>,
+          <>
+            Designed and developed a ClickOnce application for queue
+            management using .NET, improving efficiency in handling customer flow.
           </>,
         ],
         images: [
@@ -116,17 +126,23 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "PEA",
+        timeframe: "2024 - Present",
+        role: "Devpool (Part Time)",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Part of HinghoiHome Project Develop Team
+            <br />The project help the host in airBnB
+            to control the usage of electricity and
+            <br />set the bill when guest use the electricity over
+            the given quota.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Participated in the Devpool project, which provided in-depth exposure to
+            design thinking, the Definition of Done (DoD), product value assessment, and
+            agile methodologies. Gained practical experience in Golang and React.js, leveraging
+            these technologies to develop a mini-project that demonstrated
+            end-to-end development practices.
           </>,
         ],
         images: [],
@@ -138,12 +154,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Khon Kaen University",
+        description: <>Bachelor in Engineering: Computer Engineering.</>,
       },
       {
         name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        description: <>Improving an English skills.</>,
       },
     ],
   },
@@ -152,8 +168,8 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Next.js",
+        description: <>Building next gen apps with Next.js + tailwind.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -171,8 +187,40 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Vue2.js",
+        description: <>Building next gen apps with Vue.js + Vuetify.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Springboot",
+        description: <>Good for project that need in a short time.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "PHP",
+        description: <>Good for project that need in a short time.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -282,4 +330,5 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+// export { person, social, home, about, blog, work, gallery };
+export { person, social, home, about, work, gallery };

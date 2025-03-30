@@ -1,0 +1,45 @@
+---
+title: "Building the AMS web application helps users easily view and manage the assets they currently hold."
+publishedAt: "2022-05-01"
+summary: "AMS helps users easily see the assets they currently hold."
+images:
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/image-03.jpg"
+team:
+  - name: "John Doe"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/company/once-ui/"
+link: "https://once-ui.com/"
+---
+
+## Overview
+
+In this project, I focused on displaying objects clearly and allowing users to search with a customizable scope. The goal was to help users easily view the assets they currently hold. With a customizable search, users can search for assets by related text such as serial number, received date, price, contract name, and more. This solution significantly reduces the time users spend searching for asset details.
+
+## Key Features
+
+- **Display the list of assets **: Developed a custom Figma plugin that extracts design tokens such as colors, typography, and spacing values, and exports them in a format compatible with our codebase.
+- **Customizable scope**: Integrated an automated process that translates Figma components into React code using a combination of design tokens and pre-built component templates. This allowed developers to focus more on logic and less on repetitive UI coding.
+- **Short time searching**: Established a CI/CD pipeline that continuously synchronizes design changes from Figma to the codebase, ensuring design updates are reflected instantly without manual intervention.
+- **Setting up a Report**: Leveraged a design system that remains the single source of truth for both designers and developers, making it easy to maintain consistency even as the product evolves.
+
+## Technologies Used
+
+- **Vue2js and Vuetify**: For building the front-end codebase.
+- **Springboot**: For building the back-end codebase.
+- **SQL**: For queries the data from the database.
+- **iText libary**: The third party libary for create a pdf.
+- **GitHub**: For managing the version and syncing changes to the repository.
+
+## Challenges and Learnings
+
+One of the biggest challenges was ensuring the search time was minimized. This involved optimizing backend queries—some of which handled large amounts of data. For example, using "select *" retrieves all nested objects, so queries needed to be refined to select only necessary fields. Additionally, we worked on improving the system by implementing the iText PDF library, which enables users to automatically generate PDF reports.
+
+## Outcome
+
+The AMS web application helps users easily view and manage the assets they currently hold. Users can perform searches with a customizable scope to quickly find specific assets. Exporting to PDF further reduces time and minimizes human errors compared to manual typing.
+
+---
+
+This project was created in response to my routine tasks, aiming to simplify daily work. It combines logical services with asset management for greater efficiency.
