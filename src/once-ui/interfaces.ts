@@ -179,3 +179,16 @@ export interface CommonProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   style?: React.CSSProperties;
 }
+
+export interface ImageItem {
+  src: string;
+  alt: string;
+  orientation: "horizontal" | "vertical" | "unknown";
+}
+
+export interface GalleryData {
+  label: string;
+  title: string;
+  description: string;
+  images: ImageItem[];
+}

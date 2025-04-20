@@ -112,12 +112,12 @@ const about = {
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
@@ -221,85 +221,57 @@ const work = {
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
+const imageCount = 65;
 
-const gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
-};
+// const gallery = {
+//   label: "Gallery",
+//   title: "My photo gallery",
+//   description: `A photo collection by ${person.name}`,
+//   images: Array.from({ length: imageCount }, (_, i) => {
+//     const index = i + 1;
+//     return {
+//       src: `/images/gallery/icm/${index}.jpg`,
+//       alt: `image ${index}`,
+//       orientation: index % 2 === 0 ? "horizontal" : "vertical", // or any logic
+//     };
+//   }),
+// };
+
+export async function generateGallery() {
+  const images = await Promise.all(
+    Array.from({ length: imageCount }, (_, i) => {
+      const index = i + 1;
+      const src = `/images/gallery/icm/${index}.jpg`;
+
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          const orientation = img.width > img.height ? "horizontal" : "vertical";
+          resolve({
+            src,
+            alt: `image ${index}`,
+            orientation,
+          });
+        };
+        img.onerror = () => {
+          resolve({
+            src,
+            alt: `image ${index}`,
+            orientation: "unknown",
+          });
+        };
+      });
+    })
+  );
+
+  return {
+    label: "Gallery",
+    title: "My photo gallery",
+    description: `A photo collection by ${person.name}`,
+    images,
+  };
+}
 
 // export { person, social, home, about, blog, work, gallery };
-export { person, social, home, about, work, gallery };
+export { person, social, home, about, work };
