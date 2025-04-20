@@ -4,6 +4,12 @@ View the [demo here](https://demo.magic-portfolio.com).
 
 ![Magic Portfolio](public/images/cover.png)
 
+Thanks to the original magic-portfolio
+
+https://github.com/once-ui-system/magic-portfolio
+
+https://once-ui.com/products/magic-portfolio
+
 
 # **Getting started**
 
