@@ -194,14 +194,14 @@ const about = {
         ],
       },
       {
-        title: "Vue2.js",
+        title: "Vue.js",
         description: <>Building next gen apps with Vue.js + Vuetify.</>,
         // optional: leave the array empty if you don't want to display images
         
       },
       {
         title: "Springboot",
-        description: <>Good for project that need in a short time.</>,
+        description: <>Solid backend based on JAVA.</>,
         // optional: leave the array empty if you don't want to display images
         
       },
